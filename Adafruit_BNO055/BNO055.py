@@ -317,7 +317,7 @@ class BNO055(object):
         # Read a number of unsigned byte values starting from the provided address.
         if self._i2c_device is not None:
             # I2C read.
-            return self._i2c_device.readList(address, length)
+            return bytearray(self._i2c_device.readList(address, length))
         else:
             # Build and send serial register read command.
             command = bytearray(4)
@@ -531,8 +531,10 @@ class BNO055(object):
         """
         # Switch to configuration mode, as mentioned in section 3.10.4 of datasheet.
         self._config_mode()
-        # Read the 22 bytes of calibration data.
-        cal_data = self._read_bytes(ACCEL_OFFSET_X_LSB_ADDR, 22)
+        # Read the 22 bytes of calibration data and convert it to a list (from
+        # a bytearray) so it's more easily serialized should the caller want to
+        # store it.
+        cal_data = list(self._read_bytes(ACCEL_OFFSET_X_LSB_ADDR, 22))
         # Go back to normal operation mode.
         self._operation_mode()
         return cal_data
