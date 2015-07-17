@@ -58,12 +58,12 @@ CALIBRATION_FILE = 'calibration.json'
 # function.  Don't change these without consulting section 3.4 of the datasheet.
 # The default axes mapping below assumes the Adafruit BNO055 breakout is flat on
 # a table with the row of SDA, SCL, GND, VIN, etc pins facing away from you.
-BNO_AXIS_REMAP = { x: BNO055.AXIS_REMAP_X,
-                   y: BNO055.AXIS_REMAP_Z,
-                   z: BNO055.AXIS_REMAP_Y,
-                   x_sign: BNO055.AXIS_REMAP_POSITIVE,
-                   y_sign: BNO055.AXIS_REMAP_POSITIVE,
-                   z_sign: BNO055.AXIS_REMAP_NEGATIVE }
+BNO_AXIS_REMAP = { 'x': BNO055.AXIS_REMAP_X,
+                   'y': BNO055.AXIS_REMAP_Z,
+                   'z': BNO055.AXIS_REMAP_Y,
+                   'x_sign': BNO055.AXIS_REMAP_POSITIVE,
+                   'y_sign': BNO055.AXIS_REMAP_POSITIVE,
+                   'z_sign': BNO055.AXIS_REMAP_NEGATIVE }
 
 
 # Create flask application.
