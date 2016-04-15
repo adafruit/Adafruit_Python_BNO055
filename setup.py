@@ -12,7 +12,7 @@ classifiers = ['Development Status :: 4 - Beta',
                'Topic :: System :: Hardware']
 
 setup(name              = 'Adafruit_BNO055',
-      version           = '1.0.0',
+      version           = '1.0.1',
       author            = 'Tony DiCola',
       author_email      = 'tdicola@adafruit.com',
       description       = 'Library for accessing the Bosch BNO055 absolute orientation sensor on a Raspberry Pi or Beaglebone Black.',
